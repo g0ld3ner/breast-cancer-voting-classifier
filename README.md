@@ -1,6 +1,6 @@
 # Breast Cancer Voting Classifier
 
-This repository contains a single Jupyter notebook `Brustkrebs_advanced.ipynb`.
+This repository contains a single Jupyter notebook `breast_cancer_analytics.ipynb`.
 It demonstrates how to train an ensemble on the UCI Breast Cancer dataset from
 `scikit-learn`. The objective is to reach high accuracy while minimizing
 **false negatives** so that malignant tumors are not missed.
@@ -29,7 +29,7 @@ prioritizing recall to avoid overlooking cancer cases.
    ```
 2. Launch the notebook and run the cells in order:
    ```bash
-   jupyter notebook Brustkrebs_advanced.ipynb
+   jupyter notebook breast_cancer_analytics.ipynb
    ```
 
 The notebook walks through all steps from data preparation to evaluating the
