@@ -1,25 +1,27 @@
-# Breast Cancer Voting Classifier
+# Breast Cancer Voting Classifier – ML ensemble for reliable breast cancer detection
 
 This repository contains a single Jupyter notebook `breast_cancer_analytics.ipynb`.
 It demonstrates how to train an ensemble on the UCI Breast Cancer dataset from
-`scikit-learn`. The objective is to reach high accuracy while minimizing
-**false negatives** so that malignant tumors are not missed.
+`scikit-learn`. The objective is to achieve high accuracy while **minimizing false negatives**
+so that malignant tumors are not missed.
+
 
 ## Notebook Overview
 
 - Load the dataset and split it into training and test sets
 - Invert the target labels so that `1` represents malignant tumors
-- Hyperparameter search using `GridSearchCV` for:
+- Hyperparameter tuning using `GridSearchCV` for:
   - Support Vector Classifier (SVC)
   - RandomForestClassifier
   - MLPClassifier
-  with an Fβ score (β = 50) that heavily penalizes false negatives
-- Apply `SMOTE` to balance the classes
-- Combine the best models in a soft `VotingClassifier`
-- Evaluate the ensemble with classification reports and confusion matrices
+- Combine the models into hard and soft `VotingClassifier` ensembles
+- Additional ensemble approaches: 
+  - Voting with per-model probability thresholds (hard and soft voting variants)
+- Evaluate all models and ensembles using classification reports and confusion matrices
 
-The resulting ensemble achieves roughly 96% accuracy on the test data while
-prioritizing recall to avoid overlooking cancer cases.
+
+The final ensemble outperforms each of its individual base models in terms of accuracy and recall on the test data.
+
 
 ## Running the Notebook
 
@@ -32,5 +34,10 @@ prioritizing recall to avoid overlooking cancer cases.
    jupyter notebook breast_cancer_analytics.ipynb
    ```
 
-The notebook walks through all steps from data preparation to evaluating the
-Voting Classifier.
+
+The notebook walks through all steps from data preparation to ensemble evaluation.
+
+
+## Outlook
+
+In future work, the selection of decision thresholds for each model and the ensemble will be automated
